@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Modal = ({ selectedImg, setSelectedImg }) => {
+    //checks if the area around the modal is clicked and sets the document to be displayed to null if true
     const handleClick = (e) => {
         if (e.target.classList.contains('backdrop'))
             setSelectedImg(null);

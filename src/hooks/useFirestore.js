@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { projectFirestore } from '../firebase/config';
 
+/**
+ * 
+ * @param {*} collection collection to be read from Firestore
+ */
 const useFirestore = (collection) => {
     const [docs, setDocs] = useState([]);
 
