@@ -2,14 +2,16 @@ import React, { useEffect } from 'react';
 import useStorage from '../hooks/useStorage';
 import { motion } from 'framer-motion';
 
-const Progress = ({ file, setFile }) => {
-    const { url, progress } = useStorage(file);
+const Progress = ({ file, setFile, fileData, setFileData, event }) => {
+    const { url, progress } = useStorage(file, fileData);
     
     useEffect(() => {
         if (url) {
             setFile(null);
+            setFileData({name: 'Unknown', brand: 'Unknown', type: 'Unknown', description: 'None'});
+            event.target.reset();
         }
-    }, [url, setFile]);
+    }, [url]);
 
     return (
         <motion.div className="progress-bar"
