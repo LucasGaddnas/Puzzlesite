@@ -1,17 +1,22 @@
 import { useState, useEffect } from 'react';
-import { projectFirestore } from '../firebase/config';
+//import { projectFirestore } from '../firebase/config';
 
 /**
  * 
  * @param {*} collection collection to be read from Firestore
  */
-const useFirestore = (collection) => {
+const useFirestore = (query) => {
     const [docs, setDocs] = useState([]);
+    const [lastDoc, setLastDoc] = useState(null);
+    const [firstDoc, setFirstDoc] = useState(null)
 
     useEffect(() => {
-        const unsub = projectFirestore.collection(collection)
-            .orderBy('createdAt', 'desc')
-            .onSnapshot((snapshot) => {
+        const unsub = query.onSnapshot((snapshot) => {
+
+                // Sets the first and last documents from the current read
+                setFirstDoc(snapshot.docs[0]);
+                setLastDoc(snapshot.docs[snapshot.docs.length -1]);
+
                 let documents = [];
                 snapshot.forEach(doc => {
                     documents.push({...doc.data(), id: doc.id})
@@ -19,11 +24,11 @@ const useFirestore = (collection) => {
                 setDocs(documents);
             });
 
-            return () => unsub();
+        return () => unsub();
 
-    }, [collection]);
+    }, [query]);
 
-    return { docs };
+    return { docs, firstDoc, lastDoc };
 }
 
 export default useFirestore;
