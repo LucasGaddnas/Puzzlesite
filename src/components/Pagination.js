@@ -18,9 +18,9 @@ const Pagination = ({setQuery, firstDoc, lastDoc, itemsOnPage, order, field}) =>
     }
     
     return (
-        <div>
-            <button onClick={prevPage}>Previous page</button>
-            <button onClick={nextPage}>Next page</button>
+        <div className="pagination">
+            <button className="control" onClick={prevPage}>Previous page</button>
+            <button className="control" onClick={nextPage}>Next page</button>
         </div>
     );
 }

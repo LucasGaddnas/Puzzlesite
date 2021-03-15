@@ -8,20 +8,20 @@ const Filter = ({setQuery, setItemsOnPage, setOrder, setField, itemsOnPage, orde
     }, [field, order, itemsOnPage]);
 
     return (
-        <div>
+        <div className="filter">
             <label htmlFor="items">Items shown</label>
-            <select name="items" onChange={(e) => setItemsOnPage(parseInt(e.target.value, 10))}>
-                <option value="3">3</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
+            <select className="control" name="items" onChange={(e) => setItemsOnPage(parseInt(e.target.value, 10))}>
+                <option value="16">16</option>
+                <option value="24">24</option>
+                <option value="32">32</option>
             </select>
             <label htmlFor="order">Order by</label>
-            <select name="order" onChange={(e) => setOrder(e.target.value)}>
+            <select className="control" name="order" onChange={(e) => setOrder(e.target.value)}>
                 <option value="desc">Newest</option>
                 <option value="asc">Oldest</option>
             </select>
             <label htmlFor="type">Filter</label>
-            <select name="type" onChange={(e) => setField(e.target.value)}>
+            <select className="control" name="type" onChange={(e) => setField(e.target.value)}>
                 <option value="createdAt">Time</option>
                 <option value="name">Name</option>
                 <option value="type">Type</option>

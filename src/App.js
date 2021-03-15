@@ -13,8 +13,8 @@ import { projectFirestore } from './firebase/config';
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
   const [showUpload, setShowUpload] = useState(false);
-  const [query, setQuery] = useState(projectFirestore.collection('puzzles').orderBy('createdAt', 'desc').limit(3));
-  const [itemsOnPage, setItemsOnPage] = useState(3);
+  const [itemsOnPage, setItemsOnPage] = useState(16);
+  const [query, setQuery] = useState(projectFirestore.collection('puzzles').orderBy('createdAt', 'desc').limit(itemsOnPage));
   const [order, setOrder] = useState('desc');
   const [field, setField] = useState('createdAt');
 
@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <button className="Addbtn" onClick={onClick}>Add</button>
+      <button className="control" onClick={onClick}>Add</button>
       { showUpload ? <UploadForm /> : null }
       <Filter setQuery={setQuery} setItemsOnPage={setItemsOnPage} setOrder={setOrder} setField={setField} itemsOnPage={itemsOnPage} order={order} field={field}/>
       <ImageGrid setSelectedImg={setSelectedImg} docs={docs}/>

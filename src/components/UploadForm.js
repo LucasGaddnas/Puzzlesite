@@ -40,17 +40,18 @@ const UploadForm = () => {
     }
     
     return (
-        <form onSubmit={submitHandler}>
-            <input type="file" name="file"/>
+        <form className="upload-form" onSubmit={submitHandler}>
+            <input className="control" type="file" name="file"/>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" onChange={changeHandler}/>
+            <input className="control" type="text" name="name" onChange={changeHandler}/>
             <label htmlFor="brand">Brand</label>
-            <input type="text" name="brand" onChange={changeHandler}/>
+            <input className="control" type="text" name="brand" onChange={changeHandler}/>
+            <br></br>
             <label htmlFor="type">Type</label>
-            <input type="text" name="type" onChange={changeHandler}/>
+            <input className="control" type="text" name="type" onChange={changeHandler}/>
             <label htmlFor="description">Description</label>
-            <input type="text" name="description" onChange={changeHandler}/>
-            <button type="submit">Submit</button>
+            <input className="control" type="text" name="description" onChange={changeHandler}/>
+            <button className="control" type="submit">Submit</button>
             <div className="output" >
             { error && <div className="error">{ error }</div> }
             { file && <div>{ file.name }</div> }
