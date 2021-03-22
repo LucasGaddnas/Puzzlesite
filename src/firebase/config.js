@@ -1,16 +1,19 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyBcSL7xzeWUHzcDZXRye0RVRQfmXuO1Up0",
-    authDomain: "puzzlegallery.firebaseapp.com",
-    databaseURL: "https://puzzlegallery.firebaseio.com",
-    projectId: "puzzlegallery",
-    storageBucket: "puzzlegallery.appspot.com",
-    messagingSenderId: "864933429102",
-    appId: "1:864933429102:web:ec5b8fc699506749644b7f"
+const firebaseConfig = {
+    apiKey: process.env.REACT_APP_FIREBASE_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -20,4 +23,4 @@ const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectStorage, projectFirestore, timestamp };
+export { firebaseConfig, projectStorage, projectFirestore, timestamp };
