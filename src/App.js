@@ -11,6 +11,7 @@ import { projectFirestore } from './firebase/config';
 import Login from './components/Login';
 
 function App() {
+  const [showLogin, setShowLogin] = useState(false);
   const [selectedImg, setSelectedImg] = useState(null);
   const [itemsOnPage, setItemsOnPage] = useState(16);
   const [query, setQuery] = useState(projectFirestore.collection('puzzles').orderBy('createdAt', 'desc').limit(itemsOnPage));
@@ -23,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Login />
+      { showLogin ? <Login setShowLogin={setShowLogin} /> : <button className="control" onClick={() => {setShowLogin(true)}}>Login</button>}
       <Filter setQuery={setQuery} setItemsOnPage={setItemsOnPage} setOrder={setOrder} setField={setField} itemsOnPage={itemsOnPage} order={order} field={field}/>
       <ImageGrid setSelectedImg={setSelectedImg} docs={docs}/>
       { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/> }
