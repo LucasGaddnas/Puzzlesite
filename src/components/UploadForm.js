@@ -41,17 +41,26 @@ const UploadForm = () => {
     
     return (
         <form className="upload-form" onSubmit={submitHandler}>
-            <input className="control" type="file" name="file"/>
-            <label htmlFor="name">Name</label>
-            <input className="control" type="text" name="name" onChange={changeHandler}/>
-            <label htmlFor="brand">Brand</label>
-            <input className="control" type="text" name="brand" onChange={changeHandler}/>
-            <br></br>
-            <label htmlFor="type">Type</label>
-            <input className="control" type="text" name="type" onChange={changeHandler}/>
-            <label htmlFor="description">Description</label>
-            <input className="control" type="text" name="description" onChange={changeHandler}/>
-            <button className="control" type="submit">Submit</button>
+            <div>
+                <div className="row">
+                    <input className="control" type="file" name="file"/>
+                </div>
+                <div className="row">
+                    <div className="inputwrap">
+                        <label htmlFor="name">Name</label>
+                        <input className="control input" type="text" name="name" onChange={changeHandler}/>
+                        <label htmlFor="brand">Brand</label>
+                        <input className="control input" type="text" name="brand" onChange={changeHandler}/>
+                    </div>
+                    <div className="inputwrap">
+                        <label htmlFor="type">Type</label>
+                        <input className="control input" type="text" name="type" onChange={changeHandler}/>
+                        <label htmlFor="description">Description</label>
+                        <input className="control input" type="text" name="description" onChange={changeHandler}/>
+                    </div>
+                </div>
+                <button className="control" type="submit">Submit</button>
+            </div>
             <div className="output" >
             { error && <div className="error">{ error }</div> }
             { file && <div>{ file.name }</div> }

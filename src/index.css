@@ -15,6 +15,7 @@ body{
   font-family: "Raleway Thin", sans-serif;
   color: var(--secondary);
   margin: 0;
+  background-color: var(--background);
 }
 .App{
   position: relative;
@@ -36,6 +37,9 @@ label{
   color: var(--primary);
   border: 0.2rem solid var(--primary);
   transition-duration: 0.4s;
+  -moz-box-shadow: 2px 2px 3px #666;
+  -webkit-box-shadow: 2px 2px 3px #666;
+  box-shadow: 2px 2px 3px #666;
 }
 .control:hover{
   background-color: var(--primary);
@@ -50,11 +54,11 @@ label{
   font-weight: normal;
 }
 
-/* Login and Upload form styles */
+/* Login form styles */
 .login{
   z-index: 1;
 }
-.login-card {
+.login-card{
   background: var(--background);
   flex-direction: column;
   width: 40rem;
@@ -62,7 +66,7 @@ label{
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   margin: 6rem auto 8.1rem auto;
 }
-.login-content {
+.login-content{
   padding: 1.2rem 4.4rem;
 }
 .login-form{
@@ -74,48 +78,81 @@ label{
   padding-top: 2.2rem;
   text-align: left;
 }
-.login-title {
+.login-title{
   font-size: larger;
   letter-spacing: 0.5rem;
   padding-bottom: 4rem;
   padding-top: 1.3rem;
   text-align: center;
 }
-.underline-title {
+.underline-title{
   background: -webkit-linear-gradient(right, var(--primary), #d3574bda);
   height: 0.2rem;
   margin: -1.1rem auto 0 auto;
   width: 9rem;
 }
-.form-border {
+.form-border{
   background: -webkit-linear-gradient(right, var(--primary), #d3574bda);
   height: 0.1rem;
   width: 100%;
 }
-.form-content {
+.form-content{
   border: none;
   outline: none;
   padding-top: 1.4rem;
   background: var(--background);
 }
-.submit-btn {
+.form-content:hover{
+  background-color: var(--primary);
+  color: var(--background);
+}
+.submit-btn{
   background: -webkit-linear-gradient(right, var(--primary), #d3574bda);
   border: none;
   box-shadow: 0px 1px 8px var(--primary);
   cursor: pointer;
   color: var(--background);
-  font-family: "Raleway SemiBold", sans-serif;
   height: 4.2rem;
   margin: 0 auto;
   margin-top: 15rem;
   transition: 0.25s;
   width: 15rem;
 }
-.submit-btn:hover {
+.submit-btn:hover{
   box-shadow: 0px 1px 18px var(--primary);
 }
+
+/* Upload form styles */
 .upload-form{
+  width: 50rem;
+  margin: auto;
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.input{
+  -moz-box-shadow: 2px 2px 3px #666;
+  -webkit-box-shadow: 2px 2px 3px #666;
+  box-shadow: 2px 2px 3px #666;
+  display: inline-block;
+  width: 15rem;
+  margin-bottom: 0.7rem;
+}
+.inputwrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inputwrap label {
+  display: inline-block;
+  width: 10rem;
+  text-align: left;
 }
 
 /* Progress bar styles */
@@ -129,6 +166,9 @@ label{
 .filter{
   margin-top: 2rem;
 }
+.filter label{
+  margin: 0 0.3rem 0 0.3rem;
+}
 
 /* Image grid styles */
 .img-grid{
@@ -136,8 +176,6 @@ label{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
   grid-gap: 4rem;
-  /*align-items: center;
-  justify-items: center;*/
 }
 .img-wrap{
   display: flex;
@@ -145,24 +183,11 @@ label{
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /*overflow: hidden;
-  /*height: 0;
-  padding: 50% 0;*/
-  /* Padding controls height, will always be perfectly square */
   position: relative;
 }
 .img-wrap img{
-  /*min-width: 100%;
-  min-height: 100%;
-  max-width: 150%;
-  position: absolute;
-  top: 0;
-  left: 0;*/
   width: 100%;
   height: auto;
-  /*position: absolute;
-  top: 0;
-  left: 0;*/
 }
 
 /* Modal styles */
