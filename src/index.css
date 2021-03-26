@@ -34,7 +34,7 @@ label{
 /* Basic control styles */
 .control{
   background-color: var(--background);
-  color: var(--secondary);
+  color: var(--primary);
   border: 0.2rem solid var(--primary);
   transition-duration: 0.4s;
   -moz-box-shadow: 2px 2px 3px #666;
@@ -171,7 +171,7 @@ label{
 .img-grid{
   margin: 2rem 20rem 2rem 20rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-gap: 4rem;
 }
 .img-wrap{
@@ -227,4 +227,12 @@ label{
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+/* Responsive layout for devices with screenwidth less than 600px */
+@media screen and (max-width: 600px) {
+  .img-grid {   
+    margin: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
 }
