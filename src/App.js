@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      { showLogin ? <Login setShowLogin={setShowLogin} /> : <button className="control" onClick={() => {setShowLogin(true)}}>Login</button>}
+      { showLogin ? <Login setShowLogin={setShowLogin} /> : <button className="control" onClick={() => {setShowLogin(true)}}>Logga in</button>}
       <Filter setQuery={setQuery} setItemsOnPage={setItemsOnPage} setOrder={setOrder} setField={setField} itemsOnPage={itemsOnPage} order={order} field={field}/>
       <ImageGrid setSelectedImg={setSelectedImg} docs={docs}/>
       { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/> }

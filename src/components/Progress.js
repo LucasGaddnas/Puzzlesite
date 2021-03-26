@@ -8,7 +8,7 @@ const Progress = ({ file, setFile, fileData, setFileData, event }) => {
     useEffect(() => {
         if (url) {
             setFile(null);
-            setFileData({name: 'Unknown', brand: 'Unknown', type: 'Unknown', description: 'None'});
+            setFileData({name: 'Okänt', brand: 'Okänt', type: 'Okänt', description: '-'});
             event.target.reset();
         }
     }, [url]);

@@ -4,7 +4,7 @@ import Progress from './Progress';
 const UploadForm = () => {
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
-    const [fileData, setFileData] = useState({name: 'Unknown', brand: 'Unknown', type: 'Unknown', description: 'None'});
+    const [fileData, setFileData] = useState({name: 'Okänt', brand: 'Okänt', type: 'Okänt', description: '-'});
     const [event, setEvent] = useState(null);
 
     // Allowed filetypes to upload
@@ -17,7 +17,7 @@ const UploadForm = () => {
         {
             setFileData({...fileData, [e.target.name]: e.target.value});
         } else {
-            setFileData({...fileData, [e.target.value]: 'Unknown'});
+            setFileData({...fileData, [e.target.value]: 'Okänt'});
         }
     }
 
@@ -35,7 +35,7 @@ const UploadForm = () => {
             setError('');
         } else {
             setFile(null);
-            setError('Please select a png or jpg');
+            setError('Välj en fil med formatet .png eller .jpg');
         }
     }
     
@@ -47,19 +47,19 @@ const UploadForm = () => {
                 </div>
                 <div className="row">
                     <div className="inputwrap">
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name">Namn</label>
                         <input className="control input" type="text" name="name" onChange={changeHandler}/>
-                        <label htmlFor="brand">Brand</label>
+                        <label htmlFor="brand">Märke</label>
                         <input className="control input" type="text" name="brand" onChange={changeHandler}/>
                     </div>
                     <div className="inputwrap">
-                        <label htmlFor="type">Type</label>
+                        <label htmlFor="type">Typ</label>
                         <input className="control input" type="text" name="type" onChange={changeHandler}/>
-                        <label htmlFor="description">Description</label>
+                        <label htmlFor="description">Beskrivning</label>
                         <input className="control input" type="text" name="description" onChange={changeHandler}/>
                     </div>
                 </div>
-                <button className="control" type="submit">Submit</button>
+                <button className="control" type="submit">Sänd</button>
             </div>
             <div className="output" >
             { error && <div className="error">{ error }</div> }

@@ -2,8 +2,6 @@ import React from 'react';
 import { projectFirestore } from '../firebase/config';
 
 const Pagination = ({setQuery, firstDoc, lastDoc, itemsOnPage, order, field}) => {
-    //console.log('first', firstDoc);
-    //console.log('last', lastDoc);
 
     const nextPage = () => {
         if (lastDoc) {
@@ -19,8 +17,8 @@ const Pagination = ({setQuery, firstDoc, lastDoc, itemsOnPage, order, field}) =>
     
     return (
         <div className="pagination">
-            <button className="control" onClick={prevPage}>Previous page</button>
-            <button className="control" onClick={nextPage}>Next page</button>
+            <button className="control" onClick={prevPage}>Föregående sida</button>
+            <button className="control" onClick={nextPage}>Nästa sida</button>
         </div>
     );
 }

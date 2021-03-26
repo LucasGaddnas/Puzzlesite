@@ -9,23 +9,23 @@ const Filter = ({setQuery, setItemsOnPage, setOrder, setField, itemsOnPage, orde
 
     return (
         <div className="filter">
-            <label htmlFor="items">Items shown</label>
+            <label htmlFor="items">Visa: </label>
             <select className="control" name="items" onChange={(e) => setItemsOnPage(parseInt(e.target.value, 10))}>
                 <option value="16">16</option>
                 <option value="24">24</option>
                 <option value="32">32</option>
             </select>
-            <label htmlFor="order">Order by</label>
+            <label htmlFor="order">Sortera enligt: </label>
             <select className="control" name="order" onChange={(e) => setOrder(e.target.value)}>
-                <option value="desc">Newest</option>
-                <option value="asc">Oldest</option>
+                <option value="desc">Nyast först</option>
+                <option value="asc">Äldst först</option>
             </select>
-            <label htmlFor="type">Filter</label>
+            <label htmlFor="type">Filtrera enligt: </label>
             <select className="control" name="type" onChange={(e) => setField(e.target.value)}>
-                <option value="createdAt">Time</option>
-                <option value="name">Name</option>
-                <option value="type">Type</option>
-                <option value="brand">Brand</option>
+                <option value="createdAt">Tid</option>
+                <option value="name">Namn</option>
+                <option value="type">Typ</option>
+                <option value="brand">Märke</option>
             </select>
         </div>
     )

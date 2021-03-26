@@ -14,10 +14,10 @@ const Modal = ({ selectedImg, setSelectedImg }) => {
             <div className="modal">
                 <img src={selectedImg.url} alt="enlarged" />
                 <div>
-                    <h2>Name: {selectedImg.name}</h2>
-                    <h3>Brand: {selectedImg.brand}</h3>
-                    <h3>Type: {selectedImg.type}</h3>
-                    <h3>Description: {selectedImg.description}</h3>
+                    <h2>Namn: {selectedImg.name}</h2>
+                    <h3>Märke: {selectedImg.brand}</h3>
+                    <h3>Typ: {selectedImg.type}</h3>
+                    <h3>Beskrivning: {selectedImg.description}</h3>
                 </div>
             </div>
         </motion.div>

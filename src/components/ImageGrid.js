@@ -13,7 +13,7 @@ const ImageGrid = ({setSelectedImg, docs}) => {
                     whileHover={{ boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29)",
                     cursor: 'pointer' }} layout >
 
-                    <motion.img src={doc.url} alt="uploaded file"
+                    <motion.img src={doc.url} alt="uppladdad fil"
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                     transition={{ delay: 1 }} />
                 </motion.div>
