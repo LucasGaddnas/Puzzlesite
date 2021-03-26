@@ -17,8 +17,8 @@ const Filter = ({setQuery, setItemsOnPage, setOrder, setField, itemsOnPage, orde
             </select>
             <label htmlFor="order">Sortera enligt: </label>
             <select className="control" name="order" onChange={(e) => setOrder(e.target.value)}>
-                <option value="desc">Nyast först</option>
-                <option value="asc">Äldst först</option>
+                <option value="desc">Nyaste först</option>
+                <option value="asc">Äldsta först</option>
             </select>
             <label htmlFor="type">Filtrera enligt: </label>
             <select className="control" name="type" onChange={(e) => setField(e.target.value)}>
