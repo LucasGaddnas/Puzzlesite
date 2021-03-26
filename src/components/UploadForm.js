@@ -43,20 +43,20 @@ const UploadForm = () => {
         <form className="upload-form" onSubmit={submitHandler}>
             <div>
                 <div className="row">
-                    <input className="control" type="file" name="file"/>
+                    <input className="control input" type="file" name="file"/>
                 </div>
                 <div className="row">
                     <div className="inputwrap">
                         <label htmlFor="name">Namn</label>
-                        <input className="control input" type="text" name="name" onChange={changeHandler}/>
+                        <input className="input" type="text" name="name" onChange={changeHandler}/>
                         <label htmlFor="brand">Märke</label>
-                        <input className="control input" type="text" name="brand" onChange={changeHandler}/>
+                        <input className="input" type="text" name="brand" onChange={changeHandler}/>
                     </div>
                     <div className="inputwrap">
                         <label htmlFor="type">Typ</label>
-                        <input className="control input" type="text" name="type" onChange={changeHandler}/>
+                        <input className="input" type="text" name="type" onChange={changeHandler}/>
                         <label htmlFor="description">Beskrivning</label>
-                        <input className="control input" type="text" name="description" onChange={changeHandler}/>
+                        <input className="input" type="text" name="description" onChange={changeHandler}/>
                     </div>
                 </div>
                 <button className="control" type="submit">Sänd</button>

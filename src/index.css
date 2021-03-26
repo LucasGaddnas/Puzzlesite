@@ -34,7 +34,7 @@ label{
 /* Basic control styles */
 .control{
   background-color: var(--background);
-  color: var(--primary);
+  color: var(--secondary);
   border: 0.2rem solid var(--primary);
   transition-duration: 0.4s;
   -moz-box-shadow: 2px 2px 3px #666;
@@ -99,10 +99,6 @@ label{
   padding-top: 1.4rem;
   background: var(--background);
 }
-.form-content:hover{
-  background-color: var(--primary);
-  color: var(--background);
-}
 .submit-btn{
   background: -webkit-linear-gradient(right, var(--primary), #d3574bda);
   border: none;
@@ -140,6 +136,10 @@ label{
   display: inline-block;
   width: 15rem;
   margin-bottom: 0.7rem;
+  background-color: var(--background);
+  color: var(--secondary);
+  border: 0.2rem solid var(--primary);
+  transition-duration: 0.4s;
 }
 .inputwrap{
   display: flex;
