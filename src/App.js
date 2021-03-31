@@ -17,6 +17,7 @@ function App() {
   const [query, setQuery] = useState(projectFirestore.collection('puzzles').orderBy('createdAt', 'desc').limit(itemsOnPage));
   const [order, setOrder] = useState('desc');
   const [field, setField] = useState('createdAt');
+  const [user, setUser] = useState(null);
 
   // Fetch all items from firestore
   const { docs, firstDoc, lastDoc } = useFirestore(query);
@@ -24,10 +25,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      { showLogin ? <Login setShowLogin={setShowLogin} /> : <button className="control" onClick={() => {setShowLogin(true)}}>Logga in</button>}
+      { showLogin ? <Login setShowLogin={setShowLogin} user={user} setUser={setUser}/> : <button className="control" onClick={() => {setShowLogin(true)}}>Logga in</button>}
       <Filter setQuery={setQuery} setItemsOnPage={setItemsOnPage} setOrder={setOrder} setField={setField} itemsOnPage={itemsOnPage} order={order} field={field}/>
       <ImageGrid setSelectedImg={setSelectedImg} docs={docs}/>
-      { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/> }
+      { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} user={user}/> }
       <Pagination setQuery={setQuery} firstDoc={firstDoc} lastDoc={lastDoc} itemsOnPage={itemsOnPage} order={order} field={field}/>
       <Footer />
     </div>

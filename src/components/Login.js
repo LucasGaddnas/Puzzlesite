@@ -6,8 +6,7 @@ import { firebaseConfig } from '../firebase/config';
 import UploadForm from './UploadForm';
 
 
-const Login = ({ setShowLogin }) => {
-    const [user, setUser] = useState(null);
+const Login = ({ setShowLogin, user, setUser }) => {
 
     const handleClick = (e) => {
         if (e.target.classList.contains('backdrop'))

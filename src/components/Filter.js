@@ -3,32 +3,6 @@ import { projectFirestore } from '../firebase/config';
 import Collapsible from 'react-collapsible';
 
 
-
-const Trigger = ({setQuery, setItemsOnPage, setOrder, setField, itemsOnPage, order, field}) => {
-    return (
-        <div className="filter-container">
-            <div className="show">
-                <div className="display">
-                    <label htmlFor="items">Visa: </label>
-                    <select className="control" name="items" onChange={(e) => setItemsOnPage(parseInt(e.target.value, 10))}>
-                        <option value="16">16</option>
-                        <option value="24">24</option>
-                        <option value="32">32</option>
-                    </select>
-                    <label htmlFor="order">Sortera enligt: </label>
-                    <select className="control" name="order" onChange={(e) => setOrder(e.target.value)}>
-                        <option value="desc">Nyaste först</option>
-                        <option value="asc">Äldsta först</option>
-                    </select>
-                </div>
-                <button className="filter" onClick={()=>{}}>Filter</button>
-            </div>
-            
-        </div>
-    )
-}
-
-
 const Filter = ({setQuery, setItemsOnPage, setOrder, setField, itemsOnPage, order, field}) => {
 
     useEffect(() => {
