@@ -160,16 +160,33 @@ label{
 }
 
 /* Filter styles */
-.filter{
-  margin-top: 2rem;
+.filter-container{
+  margin: 2rem 20rem 0 20rem;
+  position: relative;
 }
-.filter label{
-  margin: 0 0.3rem 0 0.3rem;
+.display{
+  display: inline;
+  position: absolute;
+  left: 0rem;
+}
+.display label{
+  margin-left: 0.3rem;
+} 
+.display select{
+  margin-right: 0.7rem;
+}
+.Collapsible__trigger{
+  display: none;
+  position: absolute;
+  right: 0rem;
+}
+.Collapsible__contentOuter{
+  padding-top: 2rem;
 }
 
 /* Image grid styles */
 .img-grid{
-  margin: 2rem 20rem 2rem 20rem;
+  margin: 1rem 20rem 2rem 20rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-gap: 4rem;
